@@ -2,7 +2,7 @@
   "name": "tic-tac-toe",
   "scripts": {
     "start": "bsb -make-world -w",
-    "build": "rollup -w -i lib/js/src/main.js --format iife -o public/bundle.js",
+    "build": "webpack -w",
     "clean": "bsb -clean-world"
   },
   "dependencies": {
@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "bs-platform": "^1.7.5",
-    "rollup": "^0.43.0",
-    "rollup-watch": "^4.0.0"
+    "webpack": "^3.0.0"
   }
 }
