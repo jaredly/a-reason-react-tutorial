@@ -1,0 +1,18 @@
+{
+  "name": "tic-tac-toe",
+  "scripts": {
+    "start": "bsb -make-world -w",
+    "build": "rollup -w -i lib/js/src/main.js --format iife -o public/bundle.js",
+    "clean": "bsb -clean-world"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "reason-react": ">=0.1.4"
+  },
+  "devDependencies": {
+    "bs-platform": "^1.7.5",
+    "rollup": "^0.43.0",
+    "rollup-watch": "^4.0.0"
+  }
+}

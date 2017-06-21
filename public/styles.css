@@ -1,0 +1,18 @@
+/* reset */
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 200;
+}
+div {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* v0 */
+.helloWorld {
+    padding: 100px;
+    align-items: center;
+    font-size: 30px;
+}
