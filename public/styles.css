@@ -8,14 +8,24 @@ body, div {
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
+}
+
+#root {
   align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .app {
   width: 400px;
-  height: 600px;
+  max-height: 600px;
+  flex: 1;
   box-shadow: 0 2px 15px #ccc;
-  margin-top: 200px;
+  margin: 50px;
   align-items: stretch;
 }
 
@@ -28,4 +38,10 @@ body {
 .items {
   margin: 10px 0;
   text-align: center;
+  flex: 1;
+}
+
+.footer {
+  align-items: flex-start;
+  padding: 5px 10px;
 }
