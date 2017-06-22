@@ -2,11 +2,11 @@
 let module Tile = {
   let component = ReasonReact.statelessComponent "Tile";
 
-  let make ::number children => {
+  let make ::text children => {
     ...component,
     render: fun () self => {
       <div className="tile">
-        (ReasonReact.stringToElement (string_of_int number))
+        (ReasonReact.stringToElement text)
       </div>
     }
   };
@@ -18,7 +18,9 @@ let module Board = {
   let make children => {
     ...component,
     render: fun () self => {
-      let renderTile number => <Tile number />;
+      let renderTile number =>
+        <Tile text=(string_of_int number) />;
+
       <div className="board">
         <div className="row">
           (renderTile 0)
