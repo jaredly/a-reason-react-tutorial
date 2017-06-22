@@ -1,4 +1,17 @@
 
+type item = {
+  title: string,
+  completed: bool,
+};
+type show =
+  | All
+  | Completed
+  | NotCompleted;
+type state = {
+  items: list item,
+  show: show,
+};
+
 let component = ReasonReact.statelessComponent "TodoList";
 
 let make children => {
