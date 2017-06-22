@@ -1,5 +1,5 @@
 /* reset */
-div {
+body, div {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -8,56 +8,24 @@ div {
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  align-items: center;
 }
 
-ol, ul {
-  padding-left: 30px;
+.app {
+  width: 400px;
+  height: 600px;
+  box-shadow: 0 2px 15px #ccc;
+  margin-top: 200px;
+  align-items: stretch;
 }
 
-.row {
-  flex-direction: row;
+.title {
+  font-size: 20px;
+  align-items: center;
+  padding: 20px;
 }
 
-.status {
-  margin-bottom: 10px;
-}
-
-.tile {
-  background: #fff;
-  border: 1px solid #999;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
+.items {
+  margin: 10px 0;
   text-align: center;
-  width: 34px;
-}
-
-.tile:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
-}
-
-.game {
-  display: flex;
-  flex-direction: row;
-}
-
-.game-info {
-  margin-left: 20px;
-}
-
-
-/* v0 */
-.helloWorld {
-    padding: 100px;
-    align-items: center;
-    font-size: 30px;
 }

@@ -1,3 +1,3 @@
 
-ReactDOMRe.renderToElementWithId <TicTacToe /> "root";
+ReactDOMRe.renderToElementWithId <TodoApp /> "root";
 
