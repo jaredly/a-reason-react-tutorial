@@ -25,6 +25,11 @@ let make children => {
     <div className="app">
       <div className="title">
         (se "What to do")
+        <button
+          onClick=(fun evt => Js.log "didn't add something")
+        >
+          (se "Add something")
+        </button>
       </div>
       <div className="items">
         (se "Nothing")
