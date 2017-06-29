@@ -4,6 +4,7 @@
 let se = ReasonReact.stringToElement;
 
 type item = {
+  id: int,
   title: string,
   completed: bool,
 };
@@ -17,7 +18,7 @@ let module TodoItem = {
         <input
           _type="checkbox"
           className="checkbox"
-          value=(string_of_bool item.completed)
+          checked=(Js.Boolean.to_js_boolean item.completed)
           /* TODO make interactive */
         />
         (se item.title)
@@ -36,13 +37,19 @@ let make children => {
   ...component,
   initialState: fun () => {
     items: [{
+      id: 0,
       title: "Write some things to do",
       completed: false,
     }]
   },
   render: fun {items} self => {
     let numItems = List.length items;
-    let itemToAdd = {title: "Click a button", completed: true};
+    let itemToAdd = {id: numItems, title: "Click a button", completed: true};
+
+    let renderedItems = List.map
+    (fun item => <TodoItem item key=(string_of_int item.id) />)
+    items;
+
     <div className="app">
       <div className="title">
         (se "What to do")
@@ -58,7 +65,9 @@ let make children => {
         </button>
       </div>
       <div className="items">
-        (se "Nothing")
+        (numItems === 0
+          ? se "Nothing"
+          : ReasonReact.arrayToElement (Array.of_list renderedItems))
       </div>
       <div className="footer">
         (se ((string_of_int numItems) ^ " items"))
