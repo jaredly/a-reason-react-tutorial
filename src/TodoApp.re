@@ -1,17 +1,37 @@
 
+/* I've gone ahead and made a shorted name for converting strings to elements
+ * */
+let se = ReasonReact.stringToElement;
+
 type item = {
   title: string,
   completed: bool,
 };
+
+let module TodoItem = {
+  let component = ReasonReact.statelessComponent "TodoItem";
+  let make ::item children => {
+    ...component,
+    render: fun () _ => {
+      <div className="item">
+        <input
+          _type="checkbox"
+          className="checkbox"
+          value=(string_of_bool item.completed)
+          /* TODO make interactive */
+        />
+        (se item.title)
+      </div>
+    }
+  };
+};
+
 type state = {
   items: list item,
 };
 
 let component = ReasonReact.statefulComponent "TodoList";
 
-/* I've gone ahead and made a shorted name for converting strings to elements
- * */
-let se = ReasonReact.stringToElement;
 let make children => {
   ...component,
   initialState: fun () => {
