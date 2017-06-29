@@ -4,7 +4,6 @@
 let se = ReasonReact.stringToElement;
 
 type item = {
-  id: int,
   title: string,
   completed: bool,
 };
@@ -37,17 +36,16 @@ let make children => {
   ...component,
   initialState: fun () => {
     items: [{
-      id: 0,
       title: "Write some things to do",
       completed: false,
     }]
   },
   render: fun {items} self => {
     let numItems = List.length items;
-    let itemToAdd = {id: numItems, title: "Click a button", completed: true};
+    let itemToAdd = {title: "Click a button", completed: true};
 
     let renderedItems = List.map
-    (fun item => <TodoItem item key=(string_of_int item.id) />)
+    (fun item => <TodoItem item />)
     items;
 
     <div className="app">
