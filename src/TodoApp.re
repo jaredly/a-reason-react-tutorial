@@ -22,11 +22,17 @@ let make children => {
   },
   render: fun {items} self => {
     let numItems = List.length items;
+    let itemToAdd = {title: "Click a button", completed: true};
     <div className="app">
       <div className="title">
         (se "What to do")
         <button
-          onClick=(fun evt => Js.log "didn't add something")
+          onClick=(self.update (fun evt state self => {
+            ReasonReact.Update {
+              ...state,
+              items: [itemToAdd, ...state.items]
+            }
+          }))
         >
           (se "Add something")
         </button>
