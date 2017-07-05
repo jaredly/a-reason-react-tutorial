@@ -2,6 +2,7 @@
   "name": "tic-tac-toe",
   "scripts": {
     "start": "bsb -make-world -w",
+    "js": "bsb -make-world",
     "build": "webpack -w",
     "clean": "bsb -clean-world"
   },

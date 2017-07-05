@@ -1,3 +1,4 @@
+/* @embed base.css */
 /* reset */
 body, div {
     display: flex;
@@ -21,11 +22,11 @@ body {
 }
 
 .app {
-  width: 400px;
+  width: 280px;
   max-height: 600px;
   flex: 1;
   box-shadow: 0 2px 15px #ccc;
-  margin: 50px;
+  margin: 10px;
   align-items: stretch;
 }
 
@@ -39,6 +40,7 @@ body {
   margin: 10px 0;
   text-align: center;
   flex: 1;
+  overflow: auto;
 }
 
 .footer {
@@ -47,6 +49,7 @@ body {
 }
 
 .item {
+  display: flex;
   padding: 10px 20px;
   align-items: center;
   flex-direction: row;
@@ -54,4 +57,14 @@ body {
 
 .checkbox {
   margin-right: 20px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  align-self: stretch;
+  padding: 3px 5px;
+  margin-top: 20px;
 }

@@ -1,5 +1,5 @@
 {
-  "name" : "tic-tac-toe",
+  "name" : "reason-to-do",
   "reason" : {"react-jsx" : 2},
   "bs-dependencies": ["reason-react"],
   "sources": "src"
