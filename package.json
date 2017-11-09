@@ -12,7 +12,7 @@
     "reason-react": "0.2.1"
   },
   "devDependencies": {
-    "bs-platform": "^1.7.5",
+    "bs-platform": "^2.0.0",
     "webpack": "^3.0.0"
   }
 }
