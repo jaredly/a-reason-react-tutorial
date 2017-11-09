@@ -1,47 +1,35 @@
 type item = {
   title: string,
-  completed: bool,
-};
-type state = {
-  items: list item,
+  completed: bool
 };
 
-let component = ReasonReact.statefulComponent "TodoApp";
+type state = {items: list(item)};
 
-let newItem () => {title: "Click a button", completed: true};
+let component = ReasonReact.statefulComponent("TodoApp");
+
+let newItem = () => {title: "Click a button", completed: true};
 
 let se = ReasonReact.stringToElement;
 
-let make children => {
+let make = (children) => {
   ...component,
-  initialState: fun () => {
-    items: [{
-      title: "Write some things to do",
-      completed: false,
-    }]
-  },
-  render: fun {state: {items}, update} => {
-    let numItems = List.length items;
+  initialState: () => {items: [{title: "Write some things to do", completed: false}]},
+  render: ({state: {items}, update}) => {
+    let numItems = List.length(items);
     <div className="app">
       <div className="title">
-        (se "What to do")
+        (se("What to do"))
         <button
-          onClick=(update (fun evt {state} => {
-            ReasonReact.Update {
-              ...state,
-              items: [newItem(), ...state.items]
-            }
-          }))
-        >
-          (se "Add something")
+          onClick=(
+            update(
+              (evt, {state}) => ReasonReact.Update({...state, items: [newItem(), ...state.items]})
+            )
+          )>
+          (se("Add something"))
         </button>
       </div>
-      <div className="items">
-        (se "Nothing")
-      </div>
-      <div className="footer">
-        (se ((string_of_int numItems) ^ " items"))
-      </div>
+      <div className="items"> (se("Nothing")) </div>
+      <div className="footer"> (se(string_of_int(numItems) ++ " items")) </div>
     </div>
   }
 };
