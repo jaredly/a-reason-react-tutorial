@@ -5,24 +5,31 @@ type item = {
 
 type state = {items: list(item)};
 
-let component = ReasonReact.statefulComponent("TodoApp");
+let component = ReasonReact.reducerComponent("TodoApp");
 
 let newItem = () => {title: "Click a button", completed: true};
 
-let se = ReasonReact.stringToElement;
+let str = ReasonReact.stringToElement;
 
-let make = (children) => {
+let make = children => {
   ...component,
-  initialState: () => {items: [{title: "Write some things to do", completed: false}]},
+  initialState: () => {
+    items: [{title: "Write some things to do", completed: false}]
+  },
+  reducer: ((), _) => ReasonReact.NoUpdate,
   render: ({state: {items}}) => {
     let numItems = List.length(items);
     <div className="app">
       <div className="title">
-        (se("What to do"))
-        <button onClick=((evt) => Js.log("didn't add something"))> (se("Add something")) </button>
+        (str("What to do"))
+        <button onClick=(evt => Js.log("didn't add something"))>
+          (str("Add something"))
+        </button>
       </div>
-      <div className="items"> (se("Nothing")) </div>
-      <div className="footer"> (se(string_of_int(numItems) ++ " items")) </div>
-    </div>
+      <div className="items"> (str("Nothing")) </div>
+      <div className="footer">
+        (str(string_of_int(numItems) ++ " items"))
+      </div>
+    </div>;
   }
 };
