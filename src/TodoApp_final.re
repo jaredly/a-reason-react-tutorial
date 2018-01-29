@@ -47,7 +47,7 @@ module Input = {
 
 module TodoItem = {
   let component = ReasonReact.statelessComponent("TodoItem");
-  let make = (~item, ~onToggle, _) => {
+  let make = (~item, ~onToggle, children) => {
     ...component,
     render: (_) =>
       <div className="item">
