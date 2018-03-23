@@ -1,10 +1,12 @@
 let component = ReasonReact.statelessComponent("TodoApp");
 
-let make = (children) => {
+let make = _children => {
   ...component,
-  render: (self) =>
+  render: _self =>
     <div className="app">
-      <div className="title"> (ReasonReact.stringToElement("What to do")) </div>
+      <div className="title">
+        (ReasonReact.stringToElement("What to do"))
+      </div>
       <div className="items"> (ReasonReact.stringToElement("Nothing")) </div>
-    </div>
+    </div>,
 };

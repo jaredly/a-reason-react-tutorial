@@ -9,10 +9,10 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "reason-react": "0.2.4"
+    "reason-react": "^0.3.4"
   },
   "devDependencies": {
-    "bs-platform": "2.1.0",
+    "bs-platform": "^2.2.3",
     "webpack": "^3.0.0"
   }
 }
