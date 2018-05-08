@@ -8,5 +8,5 @@ let make = _children => {
         (ReasonReact.stringToElement("What to do"))
       </div>
       <div className="items"> (ReasonReact.stringToElement("Nothing")) </div>
-    </div>,
+    </div>
 };
